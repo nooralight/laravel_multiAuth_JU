@@ -22,6 +22,7 @@
                 <th scope="col">Mobile Number</th>
                 <th scope="col">JU Details</th>
                 <th scope="col">Occupation with Details</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -34,6 +35,21 @@
                 <td>{{$user->mobile}}</td>
                 <td>JU Batch: {{$user->ju_batch}} <br>IIT Batch:{{$user->iit_batch}} <br>Hall: {{$user->hall}} <br>Session: {{$user->ac_session}} <br>Degree: {{$user->degree_obt}}</td>
                 <td>{{$user->occupation}} <br>{{$user->designation}} <br>{{$user->organization}} <br>{{$user->address_org}}</td>
+                <td>{{$user->status}}
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Action
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="">Active</a>
+                      <a class="dropdown-item" href="#">Deactive</a>
+                    </div>
+                  </div>
+                </td>
+                {{-- <form method="post" action={{route("change_status", $item->id)}} id={{"user-status-".$item->id}}>
+                  @csrf
+                  @method("PUT")
+                </form> --}}
               </tr>
               @endforeach
             </tbody>

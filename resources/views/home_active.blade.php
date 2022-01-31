@@ -50,7 +50,7 @@
                                 <span class="text-muted">Mobile:</span> {{$user->mobile}}
                             </div>
                             <div class="col-md-6">
-                                <span class="text-muted">FB:</span> <a href="{{$user->fb_link}}" target="_blank" class="text-dark">{{$user->fb_link}}</a>
+                                <span class="text-muted">FB:</span> <a href="{{$user->fb_link}}" target="_blank" class="text-light btn btn-primary btn-sm">Open Facebook</a>
                             </div>
                         </div>
                         <hr>

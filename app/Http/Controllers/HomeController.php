@@ -25,7 +25,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
         $id = Auth::id();
 
@@ -40,6 +40,7 @@ class HomeController extends Controller
 
         if ($status == 1){
             return view("home_active")->with(["users"=>$users]);
+
         } else {
             if ($payment === null) {
                 return view('home_notActive')->with(["id"=>$id]);
