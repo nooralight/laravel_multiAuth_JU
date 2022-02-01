@@ -40,16 +40,12 @@
                     <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Action
                     </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="">Active</a>
-                      <a class="dropdown-item" href="#">Deactive</a>
-                    </div>
+                      <div class="dropdown-menu">
+                        <a  class="dropdown-item" href="{{ route('editA', ['id' => $user->id]) }}" >Active</a>
+                        <a class="dropdown-item" href="{{ route('editB', ['id' => $user->id]) }}" >Deactive</a>
+                      </div>
                   </div>
                 </td>
-                {{-- <form method="post" action={{route("change_status", $item->id)}} id={{"user-status-".$item->id}}>
-                  @csrf
-                  @method("PUT")
-                </form> --}}
               </tr>
               @endforeach
             </tbody>
@@ -61,6 +57,7 @@
 @endsection
 
 @section('script')
+
 <script>
   $(document).ready(function() {
     $('#dfUsageTable').DataTable({

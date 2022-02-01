@@ -28,7 +28,9 @@ Auth::routes();
 Route::group(['middleware' => 'admin'], function()
 {
     Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
-    Route::put("/user/status/{user}",[AdminController::class,"updateStatus"])->name("updateStatus");
+    Route::get('editA/{id}', [AdminController::class, 'updateStatusA'])->name('editA');
+    Route::get('editB/{id}', [AdminController::class, 'updateStatusB'])->name('editB');
+    //Route::get('/status/update', [AdminController::class, 'updateStatus'])->name('users.update.status');
 });
 
 Route::group(['middleware' => 'user'], function()
@@ -41,26 +43,6 @@ Route::group(['middleware' => 'user'], function()
     Route::post('/payment',[PaymentController::class, 'createPayment'])->name('payment');
     //Route::post('/payment_page',[PaymentController::class, 'gotoPayment'])->name('paymentPage');
 });
-
-Route::get('/', function (Request $request) {
-
-    $product = User::where( function($query) use($request){
-                     return $request->price_id ?
-                            $query->from('prices')->where('id',$request->price_id) : '';
-                })->where(function($query) use($request){
-                     return $request->color_id ?
-                            $query->from('colors')->where('id',$request->color_id) : '';
-                })
-                ->with('price','color')
-                ->get();
-
-    $selected_id = [];
-    $selected_id['price_id'] = $request->price_id;
-    $selected_id['color_id'] = $request->color_id;
-
-    return view('test',compact('product','selected_id'));
-
-})->name('filter');
 
 
 
