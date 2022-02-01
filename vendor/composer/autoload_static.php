@@ -151,6 +151,7 @@ class ComposerStaticInite28b559aafbf5acea695d043046cce1b
         ),
         'E' => 
         array (
+            'EloquentFilter\\' => 15,
             'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
@@ -457,6 +458,10 @@ class ComposerStaticInite28b559aafbf5acea695d043046cce1b
         array (
             0 => __DIR__ . '/..' . '/facade/flare-client-php/src',
         ),
+        'EloquentFilter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tucker-eric/eloquentfilter/src',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
@@ -537,6 +542,7 @@ class ComposerStaticInite28b559aafbf5acea695d043046cce1b
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\PaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/PaymentController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -846,6 +852,11 @@ class ComposerStaticInite28b559aafbf5acea695d043046cce1b
         'Egulias\\EmailValidator\\Warning\\QuotedString' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/QuotedString.php',
         'Egulias\\EmailValidator\\Warning\\TLD' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/TLD.php',
         'Egulias\\EmailValidator\\Warning\\Warning' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/Warning.php',
+        'EloquentFilter\\Commands\\MakeEloquentFilter' => __DIR__ . '/..' . '/tucker-eric/eloquentfilter/src/Commands/MakeEloquentFilter.php',
+        'EloquentFilter\\Filterable' => __DIR__ . '/..' . '/tucker-eric/eloquentfilter/src/Filterable.php',
+        'EloquentFilter\\LumenServiceProvider' => __DIR__ . '/..' . '/tucker-eric/eloquentfilter/src/LumenServiceProvider.php',
+        'EloquentFilter\\ModelFilter' => __DIR__ . '/..' . '/tucker-eric/eloquentfilter/src/ModelFilter.php',
+        'EloquentFilter\\ServiceProvider' => __DIR__ . '/..' . '/tucker-eric/eloquentfilter/src/ServiceProvider.php',
         'Facade\\FlareClient\\Api' => __DIR__ . '/..' . '/facade/flare-client-php/src/Api.php',
         'Facade\\FlareClient\\Concerns\\HasContext' => __DIR__ . '/..' . '/facade/flare-client-php/src/Concerns/HasContext.php',
         'Facade\\FlareClient\\Concerns\\UsesTime' => __DIR__ . '/..' . '/facade/flare-client-php/src/Concerns/UsesTime.php',

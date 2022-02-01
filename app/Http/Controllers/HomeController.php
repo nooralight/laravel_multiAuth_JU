@@ -28,17 +28,50 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $id = Auth::id();
-
-        $users = User::where('status', '=', 1)
+        if ($request->has('district')){
+            $users= User::orderBy('iit_batch','desc')
+            ->where('district', $request->district)
+            ->where('status', '=', 1)
             ->where('is_admin', '=', 0)
             ->where('id', '!=', $id)
             ->get();
+        }
+        elseif ($request->has('ju_batch')){
+            $users= User::orderBy('iit_batch','desc')
+            ->where('ju_batch', $request->ju_batch)
+            ->where('status', '=', 1)
+            ->where('is_admin', '=', 0)
+            ->where('id', '!=', $id)
+            ->get();
+        }
+        elseif ($request->has('organization')){
+            $users= User::orderBy('iit_batch','desc')
+            ->where('organization', $request->organization)
+            ->where('status', '=', 1)
+            ->where('is_admin', '=', 0)
+            ->where('id', '!=', $id)
+            ->get();
+        }
+        elseif(count($request->all()) == 1){
+            $users= User::orderBy('iit_batch','desc')
+            ->where('status', '=', 1)
+            ->where('is_admin', '=', 0)
+            ->where('id', '!=', $id)
+            ->get();
+        }
+
+        // $users = User::where('status', '=', 1)
+        //      ->where('is_admin', '=', 0)
+        //      ->where('id', '!=', $id)
+        //      ->get();
+        //dd($request);
 
         $status= Auth::user()->status;
 
         $payment = Payment::where('paymentUserID', '=', $id)->first();
 
         if ($status == 1){
+
             return view("home_active")->with(["users"=>$users]);
 
         } else {
