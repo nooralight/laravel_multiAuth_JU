@@ -12,7 +12,7 @@
             <form action="{{route('home')}}" method="get" autocomplete="off">
                 @csrf
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label for="district">{{ __('Home District') }}</label>
                             <select class="form-control form-select" id="district" name="district">
@@ -84,7 +84,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label for="ju_batch">{{ __('JU Batch') }}</label>
                                         <select class="form-control form-select" id="ju_batch" name="ju_batch" value="">
@@ -101,7 +101,7 @@
                                         </select>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label for="organization">{{ __('Oranization') }}</label>
                                         <select class="form-control form-select" id="organization" name="organization" value="">
@@ -112,8 +112,9 @@
                                         </select>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <div class="form-group mb-0">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label type="hidden" class="text-light">fv</label>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Filter') }}
@@ -124,6 +125,9 @@
                 </div>
 
             </form>
+            <div class="d-flex justify-content-center">
+                <p class="text-muted bg-muted">Choose one filter at a time</p>
+            </div>
         </div>
 
         @if(!empty($users))
