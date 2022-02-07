@@ -35,7 +35,12 @@
                 <td>{{$user->mobile}}</td>
                 <td>JU Batch: {{$user->ju_batch}} <br>IIT Batch:{{$user->iit_batch}} <br>Hall: {{$user->hall}} <br>Session: {{$user->ac_session}} <br>Degree: {{$user->degree_obt}}</td>
                 <td>{{$user->occupation}} <br>{{$user->designation}} <br>{{$user->organization}} <br>{{$user->address_org}}</td>
-                <td>{{$user->status}}
+                <td>
+                  @if($user->status==1)
+                  <p class="text-light bg-dark text-center">Active</p>
+                  @elseif($user->status==0)
+                  <p class="text-warning bg-dark text-center">Inactive</p>
+                  @endif
                   <div class="btn-group">
                     <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Action
