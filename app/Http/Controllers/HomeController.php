@@ -52,7 +52,7 @@ class HomeController extends Controller
             ->where('id', '!=', $id)
             ->get();
         }
-        elseif(count($request->all()) == 1){
+        elseif(count($request->all()) < 2){
             $users= User::orderBy('iit_batch','desc')
             ->where('status', '=', 1)
             ->where('is_admin', '=', 0)

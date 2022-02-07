@@ -115,7 +115,7 @@
                     <div class="form-group mb-0">
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">
-                                {{ __('Register') }}
+                                {{ __('Filter') }}
                             </button>
                         </div>
                     </div>
